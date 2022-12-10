@@ -46,20 +46,29 @@ function roundToHundred(num) {
 }
 
 window.onload = function() {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     // find the element that you want to drag.
     var box5 = document.getElementById('box5');
     
     /* listen to the touchMove event,
     every time it fires, grab the location
     of touch and assign it to box */
+
+    box5.addEventListener("touchstart", function(e) {
+        pos3 = e.targetTouches[0].clientX;
+        pos4 = e.targetTouches[0].clientY;
+    })
     
     box5.addEventListener('touchmove', function(e) {
       // grab the location of touch
       var touchLocation = e.targetTouches[0];
-      
+      pos1 = pos3 - touchLocation.clientX;
+      pos2 = pos4 - touchLocation.clientX;
+      pos3 = touchLocation.clientX;
+      pos4 = touchLocation.clientY;
       // assign box new coordinates based on the touch.
-      box5.style.left = touchLocation.pageX + 'px';
-      box5.style.top = touchLocation.pageY + 'px';
+      box5.style.top = (touchLocation.pageY - pos2) + 'px';
+      box5.style.left = (touchLocation.pageX - pos1) + 'px';
     })
     
     /* record the position of the touch
@@ -68,8 +77,8 @@ window.onload = function() {
     
     box5.addEventListener('touchend', function(e) {
       // current box position.
-      var x = parseInt(box5.style.left);
-      var y = parseInt(box5.style.top);
+      var x = roundToHundred(parseInt(box5.style.left));
+      var y = roundToHundred(parseInt(box5.style.top));
     })
     
   }
