@@ -44,3 +44,32 @@ function roundToHundred(num) {
     num = Number(num);
     return 100 * Math.round(num / 100);
 }
+
+window.onload = function() {
+    // find the element that you want to drag.
+    var box1 = document.getElementById('box1');
+    
+    /* listen to the touchMove event,
+    every time it fires, grab the location
+    of touch and assign it to box */
+    
+    box1.addEventListener('touchmove', function(e) {
+      // grab the location of touch
+      var touchLocation = e.targetTouches[0];
+      
+      // assign box new coordinates based on the touch.
+      box1.style.left = touchLocation.pageX + 'px';
+      box1.style.top = touchLocation.pageY + 'px';
+    })
+    
+    /* record the position of the touch
+    when released using touchend event.
+    This will be the drop position. */
+    
+    box1.addEventListener('touchend', function(e) {
+      // current box position.
+      var x = parseInt(box1.style.left);
+      var y = parseInt(box1.style.top);
+    })
+    
+  }
