@@ -28,3 +28,9 @@
     height: 100px;
     background-color: yellowgreen;
 }
+#box6{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+}

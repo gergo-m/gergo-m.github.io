@@ -3,6 +3,7 @@ dragElement(document.getElementById("box2"));
 dragElement(document.getElementById("box3"));
 dragElement(document.getElementById("box4"));
 dragElement(document.getElementById("box5"));
+dragElement(document.getElementById("box6"));
 
 function dragElement(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -48,37 +49,36 @@ function roundToHundred(num) {
 window.onload = function() {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     // find the element that you want to drag.
-    var box5 = document.getElementById('box5');
+    touchEvent(document.getElementById('box1'));
+    touchEvent(document.getElementById('box2'));
+    touchEvent(document.getElementById('box3'));
+    touchEvent(document.getElementById('box4'));
+    touchEvent(document.getElementById('box5'));
+    touchEvent(document.getElementById('box6'));
     
     /* listen to the touchMove event,
     every time it fires, grab the location
     of touch and assign it to box */
 
-    box5.addEventListener("touchstart", function(e) {
-        pos3 = e.targetTouches[0].clientX;
-        pos4 = e.targetTouches[0].clientY;
-    })
-    
-    box5.addEventListener('touchmove', function(e) {
-      // grab the location of touch
-      var touchLocation = e.targetTouches[0];
-      pos1 = pos3 - e.targetTouches[0].clientX;
-      pos2 = pos4 - e.targetTouches[0].clientY;
-      pos3 = e.targetTouches[0].clientX;
-      pos4 = e.targetTouches[0].clientY;
-      // assign box new coordinates based on the touch.
-      box5.style.top = (box5.offsetTop - pos2) + 'px';
-      box5.style.left = (box5.offsetLeft - pos1) + 'px';
-    })
-    
-    /* record the position of the touch
-    when released using touchend event.
-    This will be the drop position. */
-    
-    box5.addEventListener('touchend', function(e) {
-      // current box position.
-      box5.style.top = roundToHundred(box5.offsetTop - pos2) + "px";
-      box5.style.left = roundToHundred(box5.offsetLeft - pos1) + "px";
-    })
-    
+    function touchEvent(element) {
+        element.addEventListener("touchstart", function(e) {
+            pos3 = e.targetTouches[0].clientX;
+            pos4 = e.targetTouches[0].clientY;
+        });
+        element.addEventListener('touchmove', function(e) {
+            // grab the location of touch
+            pos1 = pos3 - e.targetTouches[0].clientX;
+            pos2 = pos4 - e.targetTouches[0].clientY;
+            pos3 = e.targetTouches[0].clientX;
+            pos4 = e.targetTouches[0].clientY;
+            // assign box new coordinates based on the touch.
+            element.style.top = (element.offsetTop - pos2) + 'px';
+            element.style.left = (element.offsetLeft - pos1) + 'px';
+        });
+        element.addEventListener('touchend', function(e) {
+            // current box position.
+            element.style.top = roundToHundred(element.offsetTop - pos2) + "px";
+            element.style.left = roundToHundred(element.offsetLeft - pos1) + "px";
+        });
+    }    
   }
