@@ -1,36 +1,8 @@
-#box1{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+*{
+    margin:0;
+    padding:0;
 }
-#box2{
+.puzzle_piece{
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: red;
-}
-#box3{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: orange;
-}
-#box4{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: green;
-}
-#box5{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: yellowgreen;
-}
-#box6{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: skyblue;
+    scale: 0.25;
 }

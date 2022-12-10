@@ -1,9 +1,8 @@
-dragElement(document.getElementById("box1"));
-dragElement(document.getElementById("box2"));
-dragElement(document.getElementById("box3"));
-dragElement(document.getElementById("box4"));
-dragElement(document.getElementById("box5"));
-dragElement(document.getElementById("box6"));
+for (let i = 1; i <= 15; i++) {
+    dragElement(document.getElementById("box" + i));
+}
+
+let highestZindex = 0
 
 function dragElement(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -18,6 +17,8 @@ function dragElement(element) {
         e.preventDefault();
         pos3 = e.clientX;
         pos4 = e.clientY;
+        highestZindex += 1
+        element.style.zIndex = highestZindex;
         document.onmouseup = closeDragElement;
         document.onmousemove = elementDrag;
     }
@@ -34,27 +35,25 @@ function dragElement(element) {
     }
 
     function closeDragElement() {
-        element.style.top = roundToHundred(element.offsetTop - pos2) + "px";
-        element.style.left = roundToHundred(element.offsetLeft - pos1) + "px";
+        element.style.top = roundToNum(98, element.offsetTop - pos2) + "px";
+        element.style.left = roundToNum(93.5, element.offsetLeft - pos1) + "px";
         document.onmouseup = null;
         document.onmousemove = null;
     }
 }
 
-function roundToHundred(num) {
+function roundToNum(roundTo, num) {
     num = Number(num);
-    return 100 * Math.round(num / 100);
+    roundTo = Number(roundTo);
+    return roundTo * Math.round(num / roundTo);
 }
 
 window.onload = function() {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     // find the element that you want to drag.
-    touchEvent(document.getElementById('box1'));
-    touchEvent(document.getElementById('box2'));
-    touchEvent(document.getElementById('box3'));
-    touchEvent(document.getElementById('box4'));
-    touchEvent(document.getElementById('box5'));
-    touchEvent(document.getElementById('box6'));
+    for (let i = 1; i <= 15; i++) {
+        touchEvent(document.getElementById("box" + i));
+    }
     
     /* listen to the touchMove event,
     every time it fires, grab the location
@@ -77,8 +76,8 @@ window.onload = function() {
         });
         element.addEventListener('touchend', function(e) {
             // current box position.
-            element.style.top = roundToHundred(element.offsetTop - pos2) + "px";
-            element.style.left = roundToHundred(element.offsetLeft - pos1) + "px";
+            element.style.top = roundToNum(98, element.offsetTop - pos2) + "px";
+            element.style.left = roundToNum(93.5, element.offsetLeft - pos1) + "px";
         });
     }    
   }
