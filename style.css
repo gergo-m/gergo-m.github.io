@@ -1,0 +1,30 @@
+#box1{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+#box2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+#box3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+#box4{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+#box5{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+}
