@@ -63,7 +63,7 @@ window.onload = function() {
       // grab the location of touch
       var touchLocation = e.targetTouches[0];
       pos1 = pos3 - touchLocation.clientX;
-      pos2 = pos4 - touchLocation.clientX;
+      pos2 = pos4 - touchLocation.clientY;
       pos3 = touchLocation.clientX;
       pos4 = touchLocation.clientY;
       // assign box new coordinates based on the touch.
