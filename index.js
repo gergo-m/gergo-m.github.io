@@ -8,10 +8,8 @@ function dragElement(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (element) {
         element.onmousedown = dragMouseDown;
-        element.touchstart = dragMouseDown;
     } else {
         element.onmousedown = dragMouseDown;
-        element.touchstart = dragMouseDown;
     }
 
     function dragMouseDown(e) {
@@ -20,9 +18,7 @@ function dragElement(element) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         document.onmouseup = closeDragElement;
-        document.touchend = closeDragElement;
         document.onmousemove = elementDrag;
-        document.touchmove = elementDrag;
     }
 
     function elementDrag(e) {
@@ -81,8 +77,8 @@ window.onload = function() {
     
     box5.addEventListener('touchend', function(e) {
       // current box position.
-      var x = roundToHundred(parseInt(box5.style.left));
-      var y = roundToHundred(parseInt(box5.style.top));
+      box5.style.left = roundToHundred(parseInt(box5.style.left));
+      box5.style.top = roundToHundred(parseInt(box5.style.top));
     })
     
   }
