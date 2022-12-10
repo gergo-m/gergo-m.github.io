@@ -1,2 +1,2 @@
 # gergo-m.github.io
-Cool website
+Learning GitHub is fun.
