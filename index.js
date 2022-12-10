@@ -54,21 +54,21 @@ window.onload = function() {
     every time it fires, grab the location
     of touch and assign it to box */
 
-    /*box5.addEventListener("touchstart", function(e) {
+    box5.addEventListener("touchstart", function(e) {
         pos3 = e.targetTouches[0].clientX;
         pos4 = e.targetTouches[0].clientY;
-    })*/
+    })
     
     box5.addEventListener('touchmove', function(e) {
       // grab the location of touch
       var touchLocation = e.targetTouches[0];
-      /*pos1 = pos3 - touchLocation.clientX;
+      pos1 = pos3 - touchLocation.clientX;
       pos2 = pos4 - touchLocation.clientY;
       pos3 = touchLocation.clientX;
-      pos4 = touchLocation.clientY;*/
+      pos4 = touchLocation.clientY;
       // assign box new coordinates based on the touch.
-      box5.style.top = (touchLocation.pageY - 50/* - pos2*/) + 'px';
-      box5.style.left = (touchLocation.pageX - 50/* - pos1*/) + 'px';
+      box5.style.top = (touchLocation.pageY - 50 - pos1) + 'px';
+      box5.style.left = (touchLocation.pageX - 50 - pos2) + 'px';
     })
     
     /* record the position of the touch
@@ -77,8 +77,8 @@ window.onload = function() {
     
     box5.addEventListener('touchend', function(e) {
       // current box position.
-      box5.style.left = roundToHundred(parseInt(box5.style.left));
-      box5.style.top = roundToHundred(parseInt(box5.style.top));
+      box5.style.top = roundToHundred(box5.style.top - 50 - pos1);
+      box5.style.left = roundToHundred(box5.style.left - 50 - pos2);
     })
     
   }
