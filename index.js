@@ -67,8 +67,8 @@ window.onload = function() {
       pos3 = e.targetTouches[0].clientX;
       pos4 = e.targetTouches[0].clientY;
       // assign box new coordinates based on the touch.
-      box5.style.top = (box5.offsetTop - pos1) + 'px';
-      box5.style.left = (box5.offsetLeft - pos2) + 'px';
+      box5.style.top = (box5.offsetTop - pos2) + 'px';
+      box5.style.left = (box5.offsetLeft - pos1) + 'px';
     })
     
     /* record the position of the touch
@@ -77,8 +77,8 @@ window.onload = function() {
     
     box5.addEventListener('touchend', function(e) {
       // current box position.
-      box5.style.top = roundToHundred(box5.offsetTop - pos1) + "px";
-      box5.style.left = roundToHundred(box5.offsetLeft - pos2) + "px";
+      box5.style.top = roundToHundred(box5.offsetTop - pos2) + "px";
+      box5.style.left = roundToHundred(box5.offsetLeft - pos1) + "px";
     })
     
   }
