@@ -1,10 +1,19 @@
+/*function resize(event) {
+    visualViewport.height = document.documentElement.clientHeight;
+    visualViewport.width = document.documentElement.clientWidth;
+}
+window.addEventListener("resize", resize, false);
+resize();*/
+
 for (let i = 1; i <= 15; i++) {
     dragElement(document.getElementById("box" + i));
-    document.getElementById("box" + i).style.top = String(window.innerHeight*0.75*Math.random()) + "px";
-    document.getElementById("box" + i).style.left = String(window.innerWidth*0.75*Math.random()) + "px";
+    document.getElementById("box" + i).style.top = String((document.documentElement.clientHeight-374)*Math.random()) + "px";
+    document.getElementById("box" + i).style.left = String((document.documentElement.clientWidth-392)*Math.random()) + "px";
 }
 
 console.log(window.innerHeight, window.innerWidth);
+console.log(visualViewport.height, visualViewport.width)
+console.log(document.documentElement.clientHeight, document.documentElement.clientWidth);
 
 
 let highestZindex = 0
