@@ -1,6 +1,11 @@
 for (let i = 1; i <= 15; i++) {
     dragElement(document.getElementById("box" + i));
+    document.getElementById("box" + i).style.top = String(window.innerHeight*0.75*Math.random()) + "px";
+    document.getElementById("box" + i).style.left = String(window.innerWidth*0.75*Math.random()) + "px";
 }
+
+console.log(window.innerHeight, window.innerWidth);
+
 
 let highestZindex = 0
 

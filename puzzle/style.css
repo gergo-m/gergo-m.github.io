@@ -5,4 +5,12 @@
 .puzzle_piece{
     position: absolute;
     scale: 0.25;
+    top: -98px;
+    left: -93.5px;
+    
+}
+
+@keyframes myScatter{
+    from{top:-98px;}
+    to{top:300px;}
 }
