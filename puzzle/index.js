@@ -7,13 +7,13 @@ resize();*/
 
 for (let i = 1; i <= 15; i++) {
     dragElement(document.getElementById("box" + i));
-    document.getElementById("box" + i).style.top = String((document.documentElement.clientHeight-374)*Math.random()) + "px";
-    document.getElementById("box" + i).style.left = String((document.documentElement.clientWidth-392)*Math.random()) + "px";
+    document.getElementById("box" + i).style.top = String((document.documentElement.clientHeight/*-374*/)*Math.random()) + "px";
+    document.getElementById("box" + i).style.left = String((document.documentElement.clientWidth/*-392*/)*Math.random()) + "px";
 }
 
-console.log(window.innerHeight, window.innerWidth);
+/*console.log(window.innerHeight, window.innerWidth);
 console.log(visualViewport.height, visualViewport.width)
-console.log(document.documentElement.clientHeight, document.documentElement.clientWidth);
+console.log(document.documentElement.clientHeight, document.documentElement.clientWidth);*/
 
 
 let highestZindex = 0
