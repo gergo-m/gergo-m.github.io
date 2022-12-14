@@ -7,8 +7,8 @@ resize();*/
 
 for (let i = 1; i <= 15; i++) {
     dragElement(document.getElementById("box" + i));
-    document.getElementById("box" + i).style.top = String((document.documentElement.clientHeight/*-374*/)*Math.random()) + "px";
-    document.getElementById("box" + i).style.left = String((document.documentElement.clientWidth/*-392*/)*Math.random()) + "px";
+    document.getElementById("box" + i).style.top = String((document.documentElement.clientHeight-document.documentElement.clientHeight*0.4)*Math.random()) + "px";
+    document.getElementById("box" + i).style.left = String((document.documentElement.clientWidth-document.documentElement.clientWidth*0.2)*Math.random()) + "px";
 }
 
 /*console.log(window.innerHeight, window.innerWidth);
