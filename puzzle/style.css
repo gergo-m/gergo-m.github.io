@@ -9,12 +9,61 @@ canvas {
     padding:0;
     z-index:-1;
 }
+#container{
+    transform: translate(-50%, -50%) scale(0.25);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+}
+.triangle-right{
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid #fff;
+    border-bottom: 25px solid transparent;
+    margin-top: 175px;
+    margin-left: 310px;
+    opacity: 50%;
+    position: absolute;
+}
+.triangle-left{
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 50px solid #fff;
+    border-bottom: 25px solid transparent;
+    margin-top: 175px;
+    margin-left: 10px;
+    opacity: 50%;
+    position: absolute;
+}
+.triangle-down{
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid #fff;
+    margin-top: 330px;
+    margin-left: 170px;
+    opacity: 50%;
+    position: absolute;
+}
+.triangle-up{
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #fff;
+    margin-top: 20px;
+    margin-left: 170px;
+    opacity: 50%;
+    position: absolute;
+}
 .puzzle_piece{
     position: absolute;
     scale: 0.25;
     top: -98px;
     left: -93.5px;
-    
 }
 
 @keyframes myScatter{
