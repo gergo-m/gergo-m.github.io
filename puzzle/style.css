@@ -72,18 +72,24 @@ canvas {
     opacity: 50%;
     position: absolute;
 }
-.puzzle_piece{
+/*.puzzle_piece{
     position: absolute;
     scale: 0.25;
     top: -98px;
     left: -93.5px;
-}
+}*/
 table{
     border-collapse: collapse;
     border: 0;
+    margin: 0;
+    padding: 0;
 }
 td {
     border-style : hidden!important;
+    padding: 0;
+}
+img{
+    display: block;
 }
 
 @keyframes myScatter{
