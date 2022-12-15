@@ -21,13 +21,9 @@ for (let i = 1; i <=14; i++) {
     var rand = Math.floor(Math.random() * 15) + 1;
     console.log(rand);
     if (document.getElementById("pl"+i)) {
-        //while (nums[rand] == 0) {
-            var prLastChild = document.getElementById("pl"+i).children[document.getElementById("pl"+i).childElementCount-1];
-            document.getElementById("pl"+i).appendChild(document.getElementById("pl"+rand).children[document.getElementById("pl"+rand).childElementCount-1]);
-            document.getElementById("pl"+rand).appendChild(prLastChild);
-        //    rand = Math.floor(Math.random() * 15);
-        //}
-        //nums[rand] = 0;
+        var prLastChild = document.getElementById("pl"+i).children[document.getElementById("pl"+i).childElementCount-1];
+        document.getElementById("pl"+i).appendChild(document.getElementById("pl"+rand).children[document.getElementById("pl"+rand).childElementCount-1]);
+        document.getElementById("pl"+rand).appendChild(prLastChild);
     }
 }
 
@@ -48,6 +44,23 @@ for (let i = 0; i <=3; i++) {
                 console.log(document.getElementById("pl" + (j+Number(dirsc[i]))).children[document.getElementById("pl" + (j+Number(dirsc[i]))).childElementCount-1]);
                 document.getElementById("pl" + (j+Number(dirsc[i]))).appendChild(document.getElementById("pl" + (j)).children[document.getElementById("pl" + (j)).childElementCount-1]);
                 document.getElementById("pl" + j).appendChild(prLastChild);
+
+                corr = 0;
+                for (let k = 1; k <= 15; k++) {
+                    if (document.getElementById("pl" + (k)).children[document.getElementById("pl" + (k)).childElementCount-1] == document.getElementById("img" + (k))) {
+                        console.log("ELEMENT " + k + " IN PLACE");
+                        corr += 1;
+                    }
+                }
+                if (corr == 15) {
+                    document.getElementById("title").innerHTML = "Boldog Karácsonyt!";
+                    for (let a = 0; a <=3; a++) {
+                        var slides = document.getElementsByClassName("triangle-"+dirs[a]);
+                        for (let b = 0; b < slides.length; b++) {
+                            slides[b].style.opacity = 0 + "%";
+                        }
+                    }
+                }
             }
         }
     }

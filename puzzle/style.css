@@ -15,6 +15,19 @@ canvas {
     left: 50%;
     position: fixed;
 }
+#title{
+    font-family: 'Mountains of Christmas', cursive;
+    letter-spacing: 3px;
+    font-size: 130px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+    background-image: linear-gradient(to left, green, red, green, red, green, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 .triangle-right{
     width: 0;
     height: 0;
@@ -64,6 +77,13 @@ canvas {
     scale: 0.25;
     top: -98px;
     left: -93.5px;
+}
+table{
+    border-collapse: collapse;
+    border: 0;
+}
+td {
+    border-style : hidden!important;
 }
 
 @keyframes myScatter{
