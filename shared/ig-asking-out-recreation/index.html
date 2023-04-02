@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAY YES PLSSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Can we hang out sometime?</h1>
+    <img src="https://media.tenor.com/zGm5acSjHCIAAAAC/cat-begging.gif" height="200" alt="pleeease">
+    <div id="By"></div>
+    <input id="btnYes" type="button" value=" YES BABY " onmousedown="btnYes()">
+    <input id="btnNo" type="button" value=" NOOOO " onmouseover="btnNo()">
+
+</body>
+
+<script type="text/javascript">
+    function btnYes() {
+        alert("YAY THANK U LOVE U <3")
+    }
+
+    function btnNo() {
+        document.getElementById("btnNo").style.left = randomIntFromInterval(30, 80) + "%";
+        document.getElementById("btnNo").style.top = randomIntFromInterval(35, 75) + "%";
+    }
+
+    function randomIntFromInterval(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+</script>
+
+</html>

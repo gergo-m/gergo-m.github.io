@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+}
+
+#btnYes {
+    position: absolute;
+    left: 40%;
+    top: 40%
+}
+
+#btnNo {
+    position: absolute;
+    left: 55%;
+    top: 40%
+}
