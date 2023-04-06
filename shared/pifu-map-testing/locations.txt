@@ -1,0 +1,4 @@
+45.254220 [$] 14.576580 [$] Kraljevica, Horvátország [$] <br>2023a 12-es osztálykirándulás [$] MARKER [$] RED
+45.3267976 [$] 14.442208 [$] Rijeka, Horvátország [$] <br>2023a 12-es osztálykirándulás [$] MARKER [$] RED
+46.9679229 [$] 19.1325993 [$] ÁGOTA Falva, Kunszentmiklós [$] <br>2023a 12-es lelkigyakorlat [$] MARKER [$] RED
+46.2685441 [$] 20.1414231 [$] Szegedi Piarista Gimnázium [$]   [$] MARKER [$] RED
