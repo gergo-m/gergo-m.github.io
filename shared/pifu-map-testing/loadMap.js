@@ -2,13 +2,14 @@ export function loadMap(locationsList) {
     console.log(locationsList);
 
     class Location {
-        constructor(latitude, longitude, name, text, pinType, pinColor) {
+        constructor(latitude, longitude, name, text, pinType, pinColor, linkToArticle) {
             this.latitude = latitude;
             this.longitude = longitude;
             this.name = name;
             this.text = text;
             this.pinType = pinType;
             this.pinColor = pinColor;
+            this.linkToArticle = linkToArticle;
         }
     }
 
@@ -30,9 +31,32 @@ export function loadMap(locationsList) {
         shadowSize: [41, 41]
     });
 
+    // loop through list to check for dupes --> add dupes to previous instance's text
+    var locationsAdded = [];
+    mainLoop:
     for (let i = 0; i < locationsList.length; i++) {
-        const location = new Location(locationsList[i][0], locationsList[i][1], locationsList[i][2], locationsList[i][3], locationsList[i][4], locationsList[i][5]);
+        const location = new Location(locationsList[i][0], locationsList[i][1], locationsList[i][2], locationsList[i][3], locationsList[i][4], locationsList[i][5], locationsList[i][6]);
 
+        for (let j = 0; j < locationsAdded.length; j++) {
+            if (location.name == locationsAdded[j].name) {
+                /*if (locationsAdded[j].text.substr(0, locationsAdded[j].text.length - 4) == "</a>") {
+                    locationsAdded[j].text = locationsAdded[j].text.substr(0, locationsAdded[j].text.length - 4) + "</a><br>• <a href='" + location.linkToArticle + "' target='_blank' style='text-color: black'>" + location.text + "</a>";
+                } else {*/
+                    locationsAdded[j].text += "<br>• <a href='" + location.linkToArticle + "' target='_blank' style='text-color: black'>" + location.text + "</a>";
+                //}
+                continue mainLoop;
+            }
+        }
+
+        if (location.text != "") {
+            location.text = "<br>• <a href='" + location.linkToArticle + "' target='_blank'>" + location.text + "</a>";
+        }
+        locationsAdded.push(location);
+    }
+
+    // loop through locations and create markers
+    for (let i = 0; i < locationsAdded.length; i++) {
+        var location = locationsAdded[i];
         var pin;
 
         switch (location.pinType) {
@@ -54,11 +78,10 @@ export function loadMap(locationsList) {
                 break;
         }
 
-        pin.bindPopup("<b>" + location.name + "</b>" + location.text).openPopup();
-    }
-    
-    const pinTypes = {
-        marker: Symbol("marker"),
-        circle: Symbol("circle")
+        if (location.text != "") {
+            pin.bindPopup("<b>" + location.name + "</b>" + location.text).openPopup();
+        } else {
+            pin.bindPopup("<b>" + location.name + "</b>").openPopup();
+        }
     }
 }

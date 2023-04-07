@@ -1,3 +1,8 @@
 #pifuMap {
-    height: 700px;
+    height: 500px;
+}
+
+.leaflet-container a {
+    color: inherit;
+    text-decoration: inherit;
 }
