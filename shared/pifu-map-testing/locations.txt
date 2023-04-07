@@ -1,4 +1,8 @@
-45.254220 [$] 14.576580 [$] Kraljevica, Horvátország [$] <br>2023a 12-es osztálykirándulás [$] MARKER [$] RED
-45.3267976 [$] 14.442208 [$] Rijeka, Horvátország [$] <br>2023a 12-es osztálykirándulás [$] MARKER [$] RED
-46.9679229 [$] 19.1325993 [$] ÁGOTA Falva, Kunszentmiklós [$] <br>2023a 12-es lelkigyakorlat [$] MARKER [$] RED
+48.7454408 [$] 19.6621951 [$] Feketebalog, Szlovákia [$] <br>• Sítábor (2004) [$] MARKER [$] RED
+48.85 [$] 19.85 [$] Garamszécs, Szlovákia [$] <br>• Sítábor (2004) [$] MARKER [$] RED
+47.9138466 [$] 18.9265462 [$] Börzsöny, Magyarország [$] • Téli gyalogtúra (2004) [$] MARKER [$] RED
+42.8867166 [$] -78.8783922 [$] Buffalo, USA [$] <br>• CTP üzleti képzés (2003) [$] MARKER [$] RED
+45.254220 [$] 14.576580 [$] Kraljevica, Horvátország [$] <br>• 2023a 12-es osztálykirándulás [$] MARKER [$] RED
+45.3267976 [$] 14.442208 [$] Rijeka, Horvátország [$] <br>• 2023a 12-es osztálykirándulás [$] MARKER [$] RED
+46.9679229 [$] 19.1325993 [$] ÁGOTA Falva, Kunszentmiklós [$] <br>• 2023a 12-es lelkigyakorlat [$] MARKER [$] RED
 46.2685441 [$] 20.1414231 [$] Szegedi Piarista Gimnázium [$]   [$] MARKER [$] RED
