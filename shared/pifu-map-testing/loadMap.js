@@ -14,7 +14,7 @@ export function loadMap(locationsList) {
     }
 
     // map setup
-    const map = L.map('pifuMap').setView([46.268544, 20.141423], 13);
+    const map = L.map('pifuMap').setView([46.268544, 20.141423], 12);
     const attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -79,9 +79,17 @@ export function loadMap(locationsList) {
         }
 
         if (location.text != "") {
-            pin.bindPopup("<b>" + location.name + "</b>" + location.text).openPopup();
+            pin.bindPopup("<b>" + location.name + "</b>" + location.text);
         } else {
             pin.bindPopup("<b>" + location.name + "</b>").openPopup();
         }
     }
+
+    setTimeout(function() {
+        map.closePopup();
+    }, 1200);
+
+    setTimeout(function() {
+        map.flyTo([46.268544, 20.141423], 5);
+    }, 1000);
 }
