@@ -86,7 +86,7 @@ function adjustLabelStyle(querySelector, correct, waitTimeUntilReset, addToAnswe
 function setRandomFlag() {
     if (countryNamesList.length == 0) {
         document.querySelector("#countryFlag").src = "";
-        document.querySelector("#countryFlag").alt = "Completed set with a score of " + correctAnswers.length + " out of " + (correctAnswers.length + wrongAnswers.length) + ".";
+        document.querySelector("#countryFlag").alt = "Completed set with a score of " + correctAnswers.length + " out of " + (correctAnswers.length + wrongAnswers.length) + ". Reload the page to restart.";
     } else {
         var flagIndex = randomIntFromInterval(0, countryNamesList.length - 1);
         document.querySelector("#countryFlag").src = "media/flags/" + countryNamesList[flagIndex] + ".png";
