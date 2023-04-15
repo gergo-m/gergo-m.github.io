@@ -2,6 +2,7 @@ var countryNamesList = [];
 var correctAnswersInSession = [];
 var wrongAnswers = [];
 var answersInSession = [];
+var results = [];
 
 readFile("media/countries-list.txt", countryNamesList);
 
@@ -28,6 +29,9 @@ document.querySelector("#submitCountryName").onclick = function() {
         setRandomFlag();
         this.innerHTML = "Check";
     }
+
+    document.querySelector("#questionLabel").innerHTML = "<h3>Which country's flag is this?</h3>";
+    document.querySelector("#inputCountryName").focus();
 };
 
 document.querySelector("#countryFlag").onclick = function() {
@@ -36,17 +40,35 @@ document.querySelector("#countryFlag").onclick = function() {
     document.querySelector("#submitCountryName").innerHTML = "Next";
 };
 
+document.querySelector("#inputCountryName").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.querySelector("#submitCountryName").click();
+    }
+});
+
+document.querySelector("#inputCountryName").addEventListener("keydown", function(event) {
+    if (event.key === "ArrowUp") {
+        event.preventDefault();
+        document.querySelector("#countryFlag").click();
+    }
+});
+
 function nextFlag(changeColorOnNext) {
     if (document.querySelector("#inputCountryName").value.toUpperCase() == document.querySelector("#countryFlag").alt.toUpperCase()) {
         document.querySelector("#inputCountryName").value = "";
+        setRandomFlag();
         if (changeColorOnNext) {
             adjustLabelStyle("#questionLabel", true, 1000, correctAnswersInSession, wrongAnswers);
         }
-        setRandomFlag();
     } else {
         if (changeColorOnNext) {
             adjustLabelStyle("#questionLabel", false, 1000, wrongAnswers, correctAnswersInSession);
         }
+    }
+
+    if (String(document.querySelector("#countryFlag").alt).includes("round")) {
+        document.querySelector("#questionLabel").innerHTML = "<h3>Press \"Continue\" to start the next round.</h3>";
     }
 }
 
@@ -113,16 +135,31 @@ function adjustLabelStyle(querySelector, correct, waitTimeUntilReset, addToAnswe
 
 function setRandomFlag() {
     if (wrongAnswers.length == 0 && countryNamesList.length == 0) { // FINISHED SESSION
+        results.push([correctAnswersInSession.length, answersInSession.length]);
+
         document.querySelector("#countryFlag").src = "";
-        document.querySelector("#countryFlag").alt = "Completed session. Reload the page to restart.";
+        document.querySelector("#countryFlag").alt = "Completed session. Here are your results:";
+        document.querySelector("#questionLabel").innerHTML = "";
+        var percentages = 0;
+        for (let i = 0; i < results.length; i++) {
+            correctAnswers += results[i][0];
+            allAnswers += results[i][1];
+            document.querySelector("#questionLabel").innerHTML += results[i][0] + " out of " + results[i][1] + " (" + Math.round(results[i][0]/results[i][1]*100) + "%)<br>";
+        }
+        document.querySelector("#questionLabel").innerHTML = "<h3>" + document.querySelector("#questionLabel").innerHTML + "</h3>";
+
+        document.querySelector("#inputCountryName").style = "opacity: 0;";
+        document.querySelector("#submitCountryName").style = "opacity: 0;";
 
     } else if (correctAnswersInSession.length + wrongAnswers.length == countryNamesList.length + answersInSession.length) { // FINISHED ROUND
         console.log("finished round");
         document.querySelector("#submitCountryName").innerHTML = "Continue";
         document.querySelector("#countryFlag").src = "";
-        document.querySelector("#countryFlag").alt = "Completed round with a score of " + correctAnswersInSession.length + " out of " + answersInSession.length + ". Press \"Continue\" to start the next round.";
+        document.querySelector("#countryFlag").alt = "Completed round with a score of " + correctAnswersInSession.length + " out of " + answersInSession.length + ".";
 
         console.log("COMPLETE ROUND");
+
+        results.push([correctAnswersInSession.length, answersInSession.length]);
 
         correctAnswersInSession = [];
         countryNamesList = [];
