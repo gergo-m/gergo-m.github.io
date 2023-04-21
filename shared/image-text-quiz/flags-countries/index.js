@@ -140,9 +140,8 @@ function setRandomFlag() {
         document.querySelector("#countryFlag").src = "";
         document.querySelector("#countryFlag").alt = "Completed session. Here are your results:";
         document.querySelector("#questionLabel").innerHTML = "";
-        var percentages = 0;
         for (let i = 0; i < results.length; i++) {
-            correctAnswers += results[i][0];
+            correctAnswersInSession += results[i][0];
             allAnswers += results[i][1];
             document.querySelector("#questionLabel").innerHTML += results[i][0] + " out of " + results[i][1] + " (" + Math.round(results[i][0]/results[i][1]*100) + "%)<br>";
         }
@@ -150,6 +149,11 @@ function setRandomFlag() {
 
         document.querySelector("#inputCountryName").style = "opacity: 0;";
         document.querySelector("#submitCountryName").style = "opacity: 0;";
+
+        correctAnswersInSession = [];
+        countryNamesList = [];
+        answersInSession = [];
+        wrongAnswers = [];
 
     } else if (correctAnswersInSession.length + wrongAnswers.length == countryNamesList.length + answersInSession.length) { // FINISHED ROUND
         console.log("finished round");
