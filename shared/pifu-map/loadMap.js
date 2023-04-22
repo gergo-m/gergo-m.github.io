@@ -78,11 +78,15 @@ export function loadMap(locationsList) {
                 break;
         }
 
-        if (location.text != "") {
-            pin.bindPopup("<b>" + location.name + "</b>" + location.text);
-        } else {
+        if (i == locationsAdded.length - 1) {
             pin.bindPopup("<b>" + location.name + "</b>").openPopup();
-        }
+        } else {
+            if (location.text != "") {
+                pin.bindPopup("<b>" + location.name + "</b>" + location.text);
+            } else {
+                pin.bindPopup("<b>" + location.name + "</b>");
+            }
+        }        
     }
 
     setTimeout(function() {
@@ -90,6 +94,6 @@ export function loadMap(locationsList) {
     }, 1200);
 
     setTimeout(function() {
-        map.flyTo([46.268544, 20.141423], 5);
+        map.flyTo([46.268544, 20.141423], 6);
     }, 1000);
 }

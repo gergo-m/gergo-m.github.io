@@ -20,6 +20,12 @@ xhr.addEventListener("load", function() {
         const data = contents.trim().split("\n").map(line => line.trim().split(" [$] "));
         for (let i = 0; i < data.length; i++) {
             if (data[i].length > 1) {
+                if (data[i].length == 6) {
+                    data[i].push("https://szepi.hu/iskola/ujsag/");
+                } else if (data[i][6] == " ") {
+                    data[i][6] = "https://szepi.hu/iskola/ujsag/";
+                }
+
                 locationsList.push(data[i]);
             }
         }
