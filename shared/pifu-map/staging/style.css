@@ -1,0 +1,47 @@
+#pifuMap {
+    height: 500px;
+}
+
+.leaflet-container a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.hamburger {
+    position: fixed;
+    z-index: 10000000;
+    top: 1rem;
+    right: 1rem;
+    padding: 0px;
+    border: black solid 0px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.closeIcon {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 75%;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    background-color:rgba(255, 255, 255, 0.95);
+    color: white;
+    list-style: none;
+    padding-top: 3.5rem;
+}
+
+.showMenu {
+    transform: translateY(0);
+}
+  
+.menuItem {
+    color: #333;
+    text-decoration: inherit;
+}
