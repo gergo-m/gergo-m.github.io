@@ -141,8 +141,6 @@ function setRandomFlag() {
         document.querySelector("#countryFlag").alt = "Completed session. Here are your results:";
         document.querySelector("#questionLabel").innerHTML = "";
         for (let i = 0; i < results.length; i++) {
-            correctAnswersInSession += results[i][0];
-            allAnswers += results[i][1];
             document.querySelector("#questionLabel").innerHTML += results[i][0] + " out of " + results[i][1] + " (" + Math.round(results[i][0]/results[i][1]*100) + "%)<br>";
         }
         document.querySelector("#questionLabel").innerHTML = "<h3>" + document.querySelector("#questionLabel").innerHTML + "</h3>";
