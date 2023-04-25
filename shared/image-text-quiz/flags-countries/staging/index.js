@@ -126,10 +126,19 @@ function adjustLabelStyle(querySelector, correct, waitTimeUntilReset, addToAnswe
         console.log(wrongAnswers);
         console.log("answersInSession " + answersInSession);
 
-        document.querySelector(querySelector).style = "color: " + (correct ? "green" : "red");
-        setTimeout(function() {
-            document.querySelector(querySelector).style = "";
-        }, waitTimeUntilReset);
+        if (results.length >= 1 && results[results.length-1][0] == results[results.length-1][1]) {
+            document.querySelector("#questionLabel").innerHTML = "";
+            for (let i = 0; i < results.length; i++) {
+                console.log(results[i]);
+                document.querySelector("#questionLabel").innerHTML += (results[i][0] + " out of " + results[i][1] + " (" + Math.round(results[i][0]/results[i][1]*100) + "%)<br>");
+            }
+            document.querySelector("#questionLabel").innerHTML = "<h3>" + document.querySelector("#questionLabel").innerHTML + "</h3>";
+        } else {
+            document.querySelector(querySelector).style = "color: " + (correct ? "green" : "red");
+            setTimeout(function() {
+                document.querySelector(querySelector).style = "";
+            }, waitTimeUntilReset);
+        }
     }
 }
 
@@ -139,11 +148,6 @@ function setRandomFlag() {
 
         document.querySelector("#countryFlag").src = "";
         document.querySelector("#countryFlag").alt = "Completed session. Here are your results:";
-        document.querySelector("#questionLabel").innerHTML = "";
-        for (let i = 0; i < results.length; i++) {
-            document.querySelector("#questionLabel").innerHTML += results[i][0] + " out of " + results[i][1] + " (" + Math.round(results[i][0]/results[i][1]*100) + "%)<br>";
-        }
-        document.querySelector("#questionLabel").innerHTML = "<h3>" + document.querySelector("#questionLabel").innerHTML + "</h3>";
 
         document.querySelector("#inputCountryName").style = "opacity: 0;";
         document.querySelector("#submitCountryName").style = "opacity: 0;";
@@ -170,6 +174,8 @@ function setRandomFlag() {
             countryNamesList.push(element);
         });
         wrongAnswers = [];
+
+        console.log(results);
 
     } else {
         var flagIndex = randomIntFromInterval(0, countryNamesList.length - 1);
