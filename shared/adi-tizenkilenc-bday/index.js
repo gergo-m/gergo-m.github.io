@@ -1,180 +1,180 @@
-function passValues() {
-    var imageFile = document.getElementById("image-preview").innerHTML;
-    var rowCount = document.getElementById("row-count").value;
-    var colCount = document.getElementById("col-count").value;
+var imageParts = [];
+var image = new Image();
+image.src = "images/photo_adi-19-bday.jpg";
 
-    localStorage.setItem("imageData", imageToSend);
-    localStorage.setItem("rowCount", rowCount);
-    localStorage.setItem("colCount", colCount);
+var numRowsToCut = 4;
+var numColsToCut = 3;
+var widthOfOnePiece = 960 / numColsToCut;
+var heightOfOnePiece = 1280 / numRowsToCut;
 
-    return false;
-}
-
-console.log("hello js");
-
-const imageFileInput = document.getElementById("image-file");
-const imagePreview = document.getElementById("image-preview");
-var imageToSend = "";
-
-imageFileInput.addEventListener("change", function() {
-    getImageData();
-});
-
-function getImageData() {
-    const file = imageFileInput.files[0];
-    if (file) {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
-        fileReader.addEventListener("load", function() {
-            imagePreview.style.display = "block";
-            imagePreview.innerHTML = "";
-            /*var imagePreviewMedia = buildElement("img", "", "image-preview-media", imagePreview);
-            imagePreviewMedia.onload = function() {
-                imageToSend = this.src;
-                document.getElementById("image-data").value = this.src;
-                document.getElementById("image-width").value = this.naturalWidth;
-                document.getElementById("image-height").value = this.naturalHeight;
-            }*/
-
-            paintImagePreview(this.result);
-
-            return this.result;
-        });
+function cutImageUp() {
+    for (var x = 0; x < numRowsToCut; x++) {
+        for (var y = 0; y < numColsToCut; y++) {
+            var canvas = document.createElement('canvas');
+            canvas.width = widthOfOnePiece;
+            canvas.height = heightOfOnePiece;
+            var context = canvas.getContext('2d');
+            context.drawImage(image, y * widthOfOnePiece, x * heightOfOnePiece, widthOfOnePiece, heightOfOnePiece, 0, 0, canvas.width, canvas.height);
+            imageParts.push(canvas.toDataURL());
+        }
     }
 }
 
-function paintImagePreview(imageSrc) {
-    var img = new Image();
-    img.src = imageSrc;
-
-    rows = document.getElementById("row-count").value;
-    cols = document.getElementById("col-count").value;
-    imgWidth = img.width;
-    imgHeight = img.height;
-    console.log("image width: " + img.width);
-    console.log("image height: " + img.height);
-
-    var canvas = document.getElementById('canvas');
-    var canvasEdited =  document.getElementById('canvasEdited');
-    var ctx = canvas.getContext('2d');
-    canvas.width = img.width;
-    canvas.height = img.height;
-    canvasEdited.width = img.width;
-    canvasEdited.height = img.height;
-    img.onload = function() {
-        console.log("0");
-
-        ctx.drawImage(img, 0, 0);
-
-        console.log("1");
-
-        var imageData = ctx.getImageData(0,0, canvas.width, canvas.height);
-
-        console.log("2");
-
-        editPixels(imageData.data);
-
-        console.log("3");
-
-        drawEditedImage(imageData);
-
-        console.log("4");
-
-        document.getElementById("image-preview").src = canvasEdited.toDataURL("image/png");
-
-        console.log("5");
-
-        document.getElementById("image-data").value = canvas.toDataURL("image/png");
-        document.getElementById("image-width").value = imagePreview.naturalWidth;
-        document.getElementById("image-height").value = imagePreview.naturalHeight;
-
-        console.log("6");
-    };    
+image.onload = function() {
+    cutImageUp();
+    constructGrid();
+    fillGrid();
 }
 
-function editPixels(imgData) {
-    for (var i = 0; i < imgData.length; i += 4) {
-        for (var j = 1; j < rows + 1; j++) {
-            if (i > imgWidth * 4 * (imgHeight / rows * j) && i < imgWidth * 4 * (imgHeight / rows * j) + imgWidth * 4 * 5) {
-                imgData[i] = 0;
-                imgData[i+1] = 0;
-                imgData[i+2] = 0;
-            }
+function constructGrid() {
+    var container = buildElement("div", "container", "container", document.body);
+    var rowOne = buildElement("div", "row", "", container);
+    var rowTwo = buildElement("div", "row", "", container);
+    var colOne = buildElement("div", "col d-flex justify-content-center", "", rowOne);
+    var colTwo = buildElement("div", "col d-flex justify-content-center", "", rowTwo);
+    var title = document.getElementById("title");
+    colOne.appendChild(title);
+    var table = document.getElementById("mainTable");
+    colTwo.appendChild(table); // rowTwo
+    //document.getElementById("tableHeader").setAttribute("colspan", numColsToCut);
+    for (var i = 0; i < numRowsToCut; i++) {
+        var tableRow = buildElement("tr", "table-row", "tableRow" + i, table);
+        for (var j = 0; j < numColsToCut; j++) {
+            var tableSlot = buildElement("td", "table-slot", "tableSlot" + (i * numColsToCut + j), tableRow);
         }
-        for (var k = 1; k < cols + 1; k++) {
-            if (i % (imgWidth / cols * 4) == 0 && i % (imgWidth * 4) != 0) {
-                imgData[i] = 0;
-                imgData[i+1] = 0;
-                imgData[i+2] = 0;
-                imgData[i+4] = 0;
-                imgData[i+5] = 0;
-                imgData[i+6] = 0;
-                imgData[i+8] = 0;
-                imgData[i+9] = 0;
-                imgData[i+10] = 0;
-                imgData[i+12] = 0;
-                imgData[i+13] = 0;
-                imgData[i+14] = 0;
-                imgData[i+16] = 0;
-                imgData[i+17] = 0;
-                imgData[i+18] = 0;
+    }
+}
+
+function fillGrid() {
+    putArrowsInGrids();
+    var puzzlePieces = imageParts.concat();
+    for (var i = 0; i < imageParts.length; i++) {
+        currentGrid = document.getElementById("tableSlot" + i);
+        if (currentGrid) {
+            var randomPieceIndex = Math.floor(Math.random() * puzzlePieces.length);
+            if (randomPieceIndex < puzzlePieces.length) {
+                var currentPuzzlePiece = puzzlePieces[randomPieceIndex];
+                puzzlePieces.splice(randomPieceIndex, 1);
+                var imageElement = buildElement("img", "grid-image", "gridImage" + randomPieceIndex, currentGrid);
+                if (image.width > image.height) {
+                    imageElement.style.width = "15vw";
+                    imageElement.style.height = "auto";
+                } else {
+                    imageElement.style.width = "auto";
+                    imageElement.style.height = "30vh";
+                }
+                Array.from(currentGrid.children).at(-1).src = currentPuzzlePiece;
             }
         }
     }
 }
 
-function drawEditedImage(newData) {
-    var ctxEdited = canvasEdited.getContext('2d');
-    ctxEdited.putImageData(newData, 0, 0);
+function putArrowsInGrids() {
+    for (var i = 0; i < numRowsToCut; i++) {
+        var currentRow = document.getElementsByClassName("table-row")[i];
+        for (var j = 0; j < numColsToCut; j++) {
+            if (i == 0) { // top row
+                switch (j) {
+                    case 0: // left column
+                        buildArrows(["down", "right"], currentRow.children[j]);
+                        break;
+                    case numColsToCut-1: // right column
+                        buildArrows(["down", "left"], currentRow.children[j]);
+                        break;
+                    default:
+                        buildArrows(["down", "left", "right"], currentRow.children[j]);
+                        break;
+                }
+            } else if (i == numRowsToCut-1) { // bottom row
+                switch (j) {
+                    case 0: // left column
+                        buildArrows(["up", "right"], currentRow.children[j]);
+                        break;
+                    case numColsToCut-1: // right column
+                        buildArrows(["up", "left"], currentRow.children[j]);
+                        break;
+                    default:
+                        buildArrows(["up", "left", "right"], currentRow.children[j]);
+                        break;
+                }
+            } else {
+                switch (j) {
+                    case 0: // left column
+                        buildArrows(["up", "down", "right"], currentRow.children[j]);
+                        break;
+                    case numColsToCut-1: // right column
+                        buildArrows(["up", "down", "left"], currentRow.children[j]);
+                        break;
+                    default:
+                        buildArrows(["up", "down", "left", "right"], currentRow.children[j]);
+                        break;
+                }
+            }
+        }
+    }
+
+    configureArrows();
 }
 
-document.getElementById("row-count").addEventListener("change", function() {
-    /*var previewDiv = document.getElementById("preview-div");
-    var colCount = document.getElementById("col-count");
-    previewDiv.innerHTML = "";
-    for (var i = 0; i < this.value; i++) { // column
-        var previewCol = buildElement("div", "row", "", document.getElementById("preview-div"));
-        for (var j = 0; j < colCount.value; j++) { // row
-            var previewSlot = buildElement("div", "col preview-slot", "", previewCol);
-            previewSlot.style.borderTop = "2px solid #000000";
-            previewSlot.style.borderLeft = "2px solid #000000";
-            previewSlot.style.width = document.getElementById("image-preview").clientWidth / colCount.value + "px";
-            previewSlot.style.height = document.getElementById("image-preview").clientHeight / this.value + "px";
-            previewSlot.style.padding = "0px";
-            if (j == colCount.value - 1) {
-                previewSlot.style.borderRight = "2px solid #000000";
-            }
-            if (i == this.value - 1) {
-                previewSlot.style.borderBottom = "2px solid #000000";
-            }
-        }
-    }*/
-    getImageData();
-});
+function configureArrows() {
+    const directions = ["up", "down", "left", "right"];
+    const directionSteps = ["-" + numColsToCut, "+" + numColsToCut, "-1", "+1"];
 
-document.getElementById("col-count").addEventListener("change", function() {
-    /*var previewDiv = document.getElementById("preview-div");
-    var rowCount = document.getElementById("row-count");
-    previewDiv.innerHTML = "";
-    for (var i = 0; i < rowCount.value; i++) { // column
-        var previewCol = buildElement("div", "row", "", document.getElementById("preview-div"));
-        for (var j = 0; j < this.value; j++) { // row
-            var previewSlot = buildElement("div", "col preview-slot", "", previewCol);
-            previewSlot.style.borderTop = "2px solid #000000";
-            previewSlot.style.borderLeft = "2px solid #000000";
-            previewSlot.style.width = document.getElementById("image-preview").clientWidth / this.value + "px";
-            previewSlot.style.height = document.getElementById("image-preview").clientHeight / rowCount.value + "px";
-            previewSlot.style.padding = "0px";
-            if (j == this.value - 1) {
-                previewSlot.style.borderRight = "2px solid #000000";
-            }
-            if (i == rowCount.value - 1) {
-                previewSlot.style.borderBottom = "2px solid #000000";
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < imageParts.length; j++) {
+            if (document.getElementsByClassName("triangle-" + directions[i])[j]) {
+                document.getElementsByClassName("triangle-" + directions[i])[j].onclick = function() {
+                    var currentSlot = this.parentElement;
+                    var targetSlot = document.getElementById("tableSlot" + (Number(String(currentSlot.id).replace("tableSlot", ""))+Number(directionSteps[i])));
+                    var currentImage = Array.from(currentSlot.children).at(-1);
+                    var targetImage = Array.from(targetSlot.children).at(-1);
+                    targetSlot.appendChild(currentImage);
+                    currentSlot.appendChild(targetImage);
+
+                    checkCompletion();
+                };
             }
         }
-    }*/
-    getImageData();
-});
+    }
+}
+
+function buildArrows(directions, parent) {
+    directions = Array.from(directions);
+    if (directions.includes("up")) {
+        buildElement("div", "triangle-up", "", parent);
+    }
+    if (directions.includes("down")) {
+        buildElement("div", "triangle-down", "", parent);
+    }
+    if (directions.includes("left")) {
+        buildElement("div", "triangle-left", "", parent);
+    }
+    if (directions.includes("right")) {
+        buildElement("div", "triangle-right", "", parent);
+    }
+}
+
+function checkCompletion() {
+    const directions = ["up", "down", "left", "right"];
+
+    correct = 0;
+    for (var i = 0; i < imageParts.length; i++) {
+        if (Array.from(document.getElementById("tableSlot" + i).children).at(-1).src == imageParts[i]) {
+            correct += 1;
+        }
+    }
+
+    if (correct == imageParts.length) {
+        for (let a = 0; a < 4; a++) {
+            var arrows = document.getElementsByClassName("triangle-" + directions[a]);
+            for (let b = 0; b < arrows.length; b++) {
+                arrows[b].style.opacity = 0 + "%";
+                arrows[b].onclick = {};
+            }
+        }
+        document.getElementById("title").innerHTML = "Boldog Szülinapot! 🥳"; // TO-DO change to user input
+    }
+}
 
 function buildElement(type, className, idName, parent) {
     var element = document.createElement(type);
