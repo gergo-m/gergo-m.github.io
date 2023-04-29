@@ -1,0 +1,127 @@
+/* ---------------------- */
+/* display screen size and visualize rows/columns */
+
+body::before {
+    content: "XS";
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+/*.col1 {
+    background-color: antiquewhite;
+}
+
+.col2 {
+    background-color: aliceblue;
+}
+
+.row {
+    border: 1px solid blue;
+    background: none;
+}*/
+  
+@media (min-width: 576px) {
+    body::before {
+        content: "SM";
+    }
+}
+  
+@media (min-width: 768px) {
+    body::before {
+        content: "MD";
+    }
+}
+  
+@media (min-width: 992px) {
+    body::before {
+        content: "LG";
+    }
+}
+  
+@media (min-width: 1200px) {
+    body::before {
+        content: "XL";
+    }
+}
+  
+@media (min-width: 1400px) {
+    body::before {
+        content: "XXL";
+    }
+}
+
+/* ---------------------- */
+
+#image-preview, #preview-div {
+    width: 92dvw;
+    height: auto;
+}
+
+@media (min-width: 576px) { /* SM */
+    #image-preview, #preview-div {
+        width: 90dvw;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) { /* MD */
+    #image-preview, #preview-div {
+        width: 75dvw;
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) { /* LG */
+    #image-preview, #preview-div {
+        width: 40dvw;
+        height: auto;
+    }
+}
+
+@media (min-width: 1200px) { /* XL */
+    #image-preview, #preview-div {
+        width: 35dvw;
+        height: auto;
+    }
+}
+
+@media (min-width: 1400px) { /* XXL */
+    #image-preview, #preview-div {
+        width: 35dvw;
+        height: auto;
+    }
+}
+
+/*#image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}*/
+
+/*:root {
+    --font-sans-serif: "PT Sans";
+    --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --body-font-family: var(--font-sans-serif);
+    --body-font-size: 50px;
+    --body-font-weight: 400;
+    --body-line-height: 1.5;
+}
+body {
+    position: relative;
+    font-family: "PT Sans";
+}*/
+/*h1 {
+    background-color: rgb(15, 188, 249);
+    padding: 20px;
+    font-family: var(--body-font-family);
+    font-style: normal;
+    font-variant: normal;
+    font-size: var(--body-font-size);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}*/

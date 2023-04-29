@@ -1,0 +1,104 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+canvas {
+    position:fixed;
+    top:0px;
+    left:0px;
+    margin:0;
+    padding:0;
+    z-index:-1;
+}
+#title{
+    font-family: 'Arial';
+    letter-spacing: 3px;
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+    color: black;
+    text-align: center;
+}
+.container {
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0.75);
+    top: 50%;
+    left: 50%;
+}
+.col {
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+td {
+    border-style : hidden!important;
+    padding: 0;
+    width: fit-content;
+}
+img {
+    display: block;
+}
+
+.table-slot{
+    position: relative;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #fff;
+    /*margin-top: 20px;
+    margin-left: 170px;*/
+    opacity: 50%;
+    position: absolute;
+    top: 5px;
+    left: 46%;
+}
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #fff;
+    /*margin-top: 330px;
+    margin-left: 170px;*/
+    opacity: 50%;
+    position: absolute;
+    bottom: 5px;
+    left: 46%;
+}
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 30px solid #fff;
+    border-bottom: 15px solid transparent;
+    /*margin-top: 175px;
+    margin-left: 10px;*/
+    opacity: 50%;
+    position: absolute;
+    top: 46%;
+    left: 5px;
+}
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 30px solid #fff;
+    border-bottom: 15px solid transparent;
+    /*margin-top: 175px;
+    margin-left: 310px;*/
+    opacity: 50%;
+    position: absolute;
+    top: 46%;
+    right: 5px;
+}
