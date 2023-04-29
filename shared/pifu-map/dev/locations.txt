@@ -1,3 +1,4 @@
+46.2685441 [$] 20.1414231 [$] Szegedi Piarista Gimnázium [$]  [$] MARKER [$] RED [$] https://www.szepi.hu
 48.7454408 [$] 19.6621951 [$] Feketebalog, Szlovákia [$] Sítábor (2004) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2004/PiarFutar-2004-01-02.pdf#page=3
 48.8500000 [$] 19.8500000 [$] Garamszécs, Szlovákia [$] Sítábor (2004) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2004/PiarFutar-2004-01-02.pdf#page=3
 47.9138466 [$] 18.9265462 [$] Börzsöny, Magyarország [$] Téli gyalogtúra (2004) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2004/PiarFutar-2004-01-02.pdf#page=3
@@ -33,12 +34,12 @@
 59.8786976 [$] 8.5941579 [$] Rjukan, Norvégia [$] COMENIUS (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-04.pdf#page=7
 52.6601700 [$] 19.0722963 [$] Włocławek, Lengyelország [$] COMENIUS (2005) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-09.pdf#page=3
 41.6529143 [$] -83.5378173 [$] Toledo, USA [$] Piarista Üzleti Program verseny váratlan jutalma (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-05.pdf#page=6
-46.6204574 [$] 19.8614568 [$] Petőfiszállás, Magyarország [$]  [$] MARKER [$] RED [$] 
-41.8933203 [$] 12.4829321 [$] Róma, Olaszország [$]  [$] MARKER [$] RED [$] 
-45.8131847 [$] 15.9771774 [$] Zágráb, Horvátország [$]  [$] MARKER [$] RED [$] 
-45.4371908 [$] 12.3345898 [$] Velence, Olaszország [$]  [$] MARKER [$] RED [$] 
+46.6204574 [$] 19.8614568 [$] Petőfiszállás, Magyarország [$] Tanári rekollekció (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=7
+41.8933203 [$] 12.4829321 [$] Róma, Olaszország [$] Nemzetközi Római Ministránstalálkozó (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=7
+45.8131847 [$] 15.9771774 [$] Zágráb, Horvátország [$] Nemzetközi Római Ministránstalálkozó (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=7
+45.4371908 [$] 12.3345898 [$] Velence, Olaszország [$] Nemzetközi Római Ministránstalálkozó (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=7
 46.1753793 [$] 21.3196342 [$] Arad, Románia [$] Wieser Tibor Atlétikai Kupa (2005) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-05-06.pdf#page=11
-46.8669115 [$] 17.2975984 [$] Várvölgy, Magyarország [$] "Túra + Nagy János tanár úr nyári rezidenciája (2005)" [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-07.pdf#page=3
+46.8669115 [$] 17.2975984 [$] Várvölgy, Magyarország [$] Túra + Nagy János tanár úr nyári rezidenciája (2005) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-07.pdf#page=3
 46.6524049 [$] 20.2566408 [$] Szentes, Magyarország [$] 2010a gyalogtúra (2005) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-07.pdf#page=3
 46.7096643 [$] 20.1531646 [$] Csongrád, Magyarország [$] 2010a nyári biciklitúra (2005) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-07.pdf#page=3
 46.8219617 [$] 19.9893055 [$] Tiszaalpár, Magyarország [$] 2010a nyári biciklitúra (2005) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2005/PiarFutar-2005-07.pdf#page=3
@@ -99,4 +100,29 @@
 47.9970680 [$] 17.1960871 [$] Rajka, Magyarország [$] 2009ab evezős túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=4
 47.6876090 [$] 17.6346815 [$] Győr, Magyarország [$] 2009ab evezős túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=4
 46.3297161 [$] 20.1018898 [$] Fehér-tó, Magyarország [$] Természettudományi tábor (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=4
-46.2685441 [$] 20.1414231 [$] Szegedi Piarista Gimnázium [$]  [$] MARKER [$] RED [$] https://www.szepi.hu
+48.2536010 [$] 22.4559800 [$] Mezőkaszony, Ukrajna [$] Nyári túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=6
+48.4421438 [$] 22.7185112 [$] Munkács, Ukrajna [$] Nyári túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=6
+48.0116300 [$] 23.5783799 [$] Técső, Ukrajna [$] Nyári túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=6
+48.1602080 [$] 24.4999403 [$] Hoverla (hegycsúcs), Ukrajna [$] Nyári túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=6
+48.6165000 [$] 23.6842795 [$] Szinevéri-tó, Ukrajna [$] Nyári túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=6
+48.6223731 [$] 22.3022572 [$] Ungvár, Ukrajna [$] Nyári túra (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=6
+46.9080791 [$] 19.6928069 [$] Kecskemét, Magyarország [$] FISEC Nyári Játékok (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-07.pdf#page=10
+47.0933824 [$] 17.9080406 [$] Veszprém, Magyarország [$] Tanári csapatépítő kirándulás (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-08.pdf#page=3
+46.9734764 [$] 17.9289807 [$] Csopak, Magyarország [$] Tanári csapatépítő kirándulás (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-08.pdf#page=3
+46.9122292 [$] 17.8917574 [$] Tihany, Magyarország [$] Tanári csapatépítő kirándulás (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-08.pdf#page=3
+47.1601175 [$] 18.0730921 [$] Öskü, Magyarország [$] Tanári csapatépítő kirándulás (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-08.pdf#page=3
+47.1910169 [$] 18.4108110 [$] Székesfehérvár, Magyarország [$] Tanári csapatépítő kirándulás (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-08.pdf#page=3
+46.4548261 [$] 16.9923923 [$] Nagykanizsa, Magyarország [$] Biciklis kirándulás (2004) [$] MARKER [$] RED [$] 
+41.8933203 [$] 12.4829321 [$] Róma, Olaszország [$] Biciklis kirándulás (2004) [$] MARKER [$] RED [$] 
+47.4979937 [$] 19.0403594 [$] Budapest, Magyarország [$] 2010a, 2011a kirándulás (2006) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2006/PiarFutar-2006-09.pdf#page=4
+45.7566557 [$] 9.7542192 [$] Bergamo, Olaszország [$] 2020b olaszországi utazás (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=10
+45.9005485 [$] 9.4120248 [$] Lecco, Olaszország [$] 2020b olaszországi utazás (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=10
+45.4641943 [$] 9.1896346 [$] Milánó, Olaszország [$] 2020b olaszországi utazás (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=10
+47.4979937 [$] 19.0403594 [$] Budapest, Magyarország [$] 2021c rendhagyó történelemóra (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=10
+43.2630018 [$] -2.9350039 [$] Bilbao, Spanyolország [$] Tanári tanulmányút, ITAKA projekt (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=11
+42.8182536 [$] -1.6440304 [$] Pamplona, Spanyolország [$] Tanári tanulmányút, ITAKA projekt (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=11
+37.1818723 [$] -3.5849899 [$] Sacromonte negyed, Spanyolország [$] Cserediák-program (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=13
+37.1734995 [$] -3.5995337 [$] Granada, Spanyolország [$] Cserediák-program (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=13
+46.2546312 [$] 20.1486016 [$] Szeged, Magyarország [$] PIT (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=14
+46.2163800 [$] 19.8894700 [$] Mórahalom, Magyaroszág [$] Lelkigyakorlat 2024a (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=15
+46.3353787 [$] 20.2083596 [$] Algyő, Magyarország [$] MOL Futófesztivál (2019) [$] MARKER [$] RED [$] https://szepi.hu/iskola/ujsag/pifu-2019/PiarFutar-2019-01.pdf#page=18
