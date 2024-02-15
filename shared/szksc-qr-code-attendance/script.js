@@ -1,6 +1,7 @@
 function onScanSuccess(decodedText, decodedResult) {
     // handle the scanned code
     console.log(`scanned = ${decodedText}`, decodedResult);
+    document.getElementById("scanned-result").innerHTML = decodedText;
 }
 
 function onScanFailure(error) {
@@ -16,9 +17,9 @@ html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
 // -----------
 
-const html5QrCode = new Html5Qrcode(/* element id */ "reader");
+//const html5QrCode = new Html5Qrcode(/* element id */ "reader");
 // file based scanning
-const fileinput = document.getElementById('qr-input-file');
+/*const fileinput = document.getElementById('qr-input-file');
 fileinput.addEventListener('change', e => {
     if (e.target.files.length = 0) {
         // no file selected, ignore
@@ -32,10 +33,9 @@ fileinput.addEventListener('change', e => {
         // success, use decodedText
         console.log(decodedText);
         document.getElementById("scanned-result").innerHTML = decodedText;
-        console.log("asd: " + document.getElementById("scanned-result").innerHTML);
     })
     .catch(err => {
         // failure, handle it
         console.log(`error scanning file. Reason: ${err}`)
     });
-});
+});*/
