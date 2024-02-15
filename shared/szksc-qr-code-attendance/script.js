@@ -32,6 +32,7 @@ fileinput.addEventListener('change', e => {
         // success, use decodedText
         console.log(decodedText);
         document.getElementById("scanned-result").innerHTML = decodedText;
+        console.log(document.getElementById("scanned-result").innerHTML);
     })
     .catch(err => {
         // failure, handle it
